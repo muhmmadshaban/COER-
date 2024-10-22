@@ -1,31 +1,38 @@
-/*
-Question-2 The loop shown below has been written by an inexperienced C++ programmer. The behavior of the loop is not correctly represented by the formatting.
-int n = 10;
-while (n > 0)
-    n /= 2;
-cout << n * n << endl;
-
- a. What is the output of the loop as it is written? // ans 0
- b. Correct the syntax of the loop so that the logic of the corrected loop corresponds to the formatting of the original loop. What is the output of the corrected loop? 
- c. Correct the formatting of the (original) loop so that the new format reflects the logical behavior of the original loop
-
-*/
 #include<iostream>
 using namespace std;
+void pattern(int n){
+    
+    for (int i = 1; i <= n; i++)
+    {
+    for (int j = 1; j <= i ; j++)
+    {
+        cout<<j;
+        if(i>1 && j<i){
+            cout<<"*";
+        }
+    }
+    cout<<endl;
+    
+    }
+    for (int i = n-1; i > 0; i--)
+    {
+        for (int j = 1; j <= i; j++)
+        {
+            cout<<j;
+            if(i>1 && i>j){
+                cout<<"*";
+            }
+        }
+        cout<<endl;
+    }
+}
 int main()
 {
-    int n = 10;
-while (n > 0){
-    cout << n * n << endl;
-    n /= 2;
-    /*
-    now output
-    100
-    25
-    4
-    1
-    */
-}
-
+    int n;
+    cout<<"ENTER THE VALUE ";
+    cin>>n;
+    pattern(n);
+  
+    
     return 0;
 }
